@@ -1,0 +1,28 @@
+1. Sliding Window :
+
+In many problems dealing with an array (or a LinkedList), we are asked to find or calculate something among 
+all the subarrays (or sublists) of a given size.
+Ex : Given an array, find the average of all subarrays of ‘K’ contiguous elements in it.
+
+2. Two Pointers :
+3. Fast & Slow Pointers :
+4. Merge Intervals
+5. Cyclic Sort
+6. In-Place Reversal of a LinkedList
+7. Tree Breadth First Search
+8. Tree Depth First Search
+9. Two Heaps
+10. Subsets
+11. Modified Binary Search
+12. Bitwise XOR
+13. Top 'K' Elements
+
+Any problem that asks us to find the top/smallest/frequent ‘K’ elements among a given set falls under this pattern.
+
+The best data structure that comes to mind to keep track of ‘K’ elements is Heap. This pattern will make use of the Heap 
+to solve multiple problems dealing with ‘K’ elements at a time from a set of given elements.
+
+14. K-way Merge
+15. 0/1 Knapsack(Dynamic Programming)
+16. Topological Sort(Graph)
+

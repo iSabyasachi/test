@@ -1,0 +1,32 @@
+1. Types of Time Functions.
+    O(1) - Constant
+    O(log n) - Logarithmic
+    O(n) - Linear
+    O(n^2) - Quadratic
+    O(n^3) - Cubic
+    O(2^n) or O(3^n) or O(n^n) - Exponential
+
+    1 < log n < sqrt (n) < n < n log n < n^2 < n^3 < 2^n < 3^n < ... < n^n
+
+2. Asymptotic Notations
+    O Big Oh - Upper Bound
+      Big Omega - Lower Bound
+      Theta - Averag Bound
+3. Permutation : Time/Space Complexity : O(N!) (N Factorial), SubSet : Time/Space Complexity O(2^N)
+    Binary Search Time Complexity : O(Log N), Sort : O(N Log N)
+
+4. Time Complexity
+Binary Heap ::: insert() : O(log n) :: remove() : O(log n) :: peek() : O(1)
+Binary Search Tree ::: peek() : O(1) :: insert() : O(log n)	delete() : O(log n)
+Linked List ::: push() : O(n) :: pop() : O(1) :: peek() : O(1)
+Arrays ::: enqueue() : O(1) :: dequeue() : O(n) :: peek() : O(n)
+
+Note :
+enqueue(): This function is used to insert new data into the queue.
+dequeue(): This function removes the element with the highest priority from the queue.
+peek()/top(): This function is used to get the highest priority element in the queue without removing it from the queue.
+
+
+
+
+
