@@ -20,7 +20,7 @@ class Permutations {
             for(int i = 0 ; i <= currentPermutation.size() ; i++){
                List<Integer> newPermutation = new ArrayList<>(currentPermutation); 
                newPermutation.add(i, nums[index]);
-               System.out.println(i+"->"+index+" "+newPermutation+" "+result);
+               //System.out.println(i+"->"+index+" "+newPermutation+" "+result);
                generatePermutationsRecursive(nums, index + 1, newPermutation, result);
             }
         }
@@ -41,7 +41,7 @@ class Permutations {
                     if(newPermutation.size() == nums.length){
                         result.add(newPermutation);
                     }else{
-                    permutations.add(newPermutation); 
+                        permutations.add(newPermutation); 
                     }
                 }
             }

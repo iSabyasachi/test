@@ -1,16 +1,17 @@
 package test;
 
 import java.util.*;
-import java.util.stream.IntStream;
-public class HelloWorld{
+import java.util.stream.*;
 
-    public static void main(String[] args){
-        System.out.println("Hello World!!!");
-        
-       int[] arr = new int[]{1,2,3,4,5,6};
-       System.out.println(Arrays.toString(arr));
-       arr = Arrays.copyOfRange(arr, 2,4);
-       System.out.println(Arrays.toString(arr));
+public class HelloWorld{  
+
+    public static void main(String[] args) {        
+        System.out.println(3 % 4);
     }
-
+    public static boolean isHappyMatric(int[] inputArr, int totalSum, int sum, int i){ 
+        if(sum == i + 1 && sum == (totalSum - sum)){
+            return true;
+        }
+        return false;
+    }
 }
