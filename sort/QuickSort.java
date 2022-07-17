@@ -12,8 +12,6 @@ public class QuickSort{
     public static void quickSort(int[] arr, int low, int high){        
         if(low < high){
             int partition = findPartition(arr, low , high);
-            //System.out.println(partition);
-            //System.out.println("Arrays : "+Arrays.toString(arr));
             quickSort(arr, low, partition - 1);
             quickSort(arr, partition + 1, high);
         }  
@@ -24,14 +22,11 @@ public class QuickSort{
         int i = low, j = high;
         while(i < j){
             while(arr[i] <= pivot)
-                i++;
-            
+                i++;            
             while(arr[j] > pivot)
-                j--;
-            
+                j--;            
             if(i < j)
-                swap(arr, i , j);                
-            
+                swap(arr, i , j);
         }
         swap(arr, low , j);
         return j;
