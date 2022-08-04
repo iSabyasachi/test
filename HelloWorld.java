@@ -1,42 +1,36 @@
 package test;
-
 import java.util.*;
+class TreeNode {
+    int val;
+    TreeNode left;
+    TreeNode right;
 
-
-public class HelloWorld{  
-
+    TreeNode(int x) {
+      val = x;
+    }
+  }
+public class HelloWorld{
+    
     public static void main(String[] args) {
-       String[] input = new String[]{"hello","world","leetcode"};
-        String chars = "welldonehoneyr";
-        System.out.println(countCharacters(input, chars));
+        TreeNode root = new TreeNode(2);
+        root.left = new TreeNode(1);
+        root.right = new TreeNode(3);        
+        System.out.println(isValidBST(root));
     }
-    public static int[] createTable(String chars){
-        int[] table = new int[128];
-        for(char ch : chars.toCharArray()){
-            table[ch]++;
-        }  
-        return table;
+
+    public static boolean isValidBST(TreeNode root) {
+        return preOrderTraverse(root);        
     }
-    public static int countCharacters(String[] words, String chars) {
-        int sumOfLengths = 0;
-        //Store the chars in int table               
-        //check if the character of each word is present in table, if yes, add the length to the table
-        for(String word : words){
-            int[] currTable = createTable(chars);
-            System.out.println(Arrays.toString(currTable));
-            boolean isPresent = true;
-            for(char ch : word.toCharArray()){
-                currTable[ch]--;
-                if(currTable[ch] == -1){
-                    isPresent = false;                    
-                }
-            }
-            if(isPresent)
-                sumOfLengths += word.length();
+
+    public static boolean preOrderTraverse(TreeNode root){
+        if(root != null){
+            System.out.println(root.val);
+            preOrderTraverse(root.left);
+            preOrderTraverse(root.right);
         }
-        return sumOfLengths;
-        
     }
-   
+
+    
+    
 }
 
