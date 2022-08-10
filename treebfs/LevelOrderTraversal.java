@@ -21,6 +21,7 @@ class TreeNode {
 };
 
 class LevelOrderTraversal {
+  
   public static List<List<Integer>> traverse(TreeNode root) {
     List<List<Integer>> result = new ArrayList<List<Integer>>();
     ArrayDeque<TreeNode> queue = new ArrayDeque<>();
