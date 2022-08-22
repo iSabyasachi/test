@@ -1,9 +1,21 @@
-package test;
-import java.util.*;
-import java.io.*;
+package test.sliding;
+/**
+Given a string s, find the length of the longest substring without repeating characters.
 
-public class HelloWorld{
-    
+Input: s = "abcabcbb"
+Output: 3
+Explanation: The answer is "abc", with the length of 3.
+
+Algo :
+
+1. create a sliding window that iterates over the characters of the string.
+2. Stores the unique characters in a  HashMap/HashSet, make sure it does not has more than K distinct character.
+3. If next element is a distinct character, compare the current length of the window with the stored longest element and move the window till 
+    it reaches end of the string
+ */
+import java.util.*;
+public class LongestSubstringWORepeatingChar{
+
     public static void main(String[] args) {
        String s = "abcabcbb";
        //String s = " ";
@@ -11,6 +23,7 @@ public class HelloWorld{
        int results = lengthOfLongestSubstring(s);
        System.out.println(results);
     } 
+    
     public static int lengthOfLongestSubstring(String s) {
         int longestSubStringLen = 0;
         int[] table = new int[128]; 
@@ -48,7 +61,4 @@ public class HelloWorld{
         }
         return Math.max(longestSubStringLen, (windowEnd - windowStart));
     }
-
-    
 }
-

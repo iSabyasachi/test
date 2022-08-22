@@ -1,6 +1,15 @@
 package test.tree;
 import java.util.*;
+/**
+You are given a perfect binary tree where all leaves are on the same level, and 
+every parent has two children. 
+The binary tree has the following definition:
 
+Populate each next pointer to point to its next right node. If there is no next right node, 
+the next pointer should be set to NULL.
+
+Initially, all next pointers are set to NULL.
+ */
 class Node {
     int val;
     Node left;
@@ -32,7 +41,26 @@ public class ConnectTree{
         root = obj.connect(root);
         //System.out.println(root.val);        
     }
-    
+    public Node connect(Node root) {
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(root);        
+        while(!queue.isEmpty()){            
+            int size = queue.size();                              
+            for(int i = 0 ; i < size ; i++){
+                Node curr = queue.poll();
+                if(i < size - 1){
+                    curr.next = queue.peek();
+                }              
+                if(curr.left != null){                    
+                    queue.add(curr.left);
+                }    
+                if(curr.right != null){ 
+                    queue.add(curr.right); 
+                }                           
+            }   
+        }  
+        return root;
+    }
     public Node connectOld(Node root) {
         Queue<Node> queue = new LinkedList<>();
         LinkedList<Node> resultNode = new LinkedList<>();
