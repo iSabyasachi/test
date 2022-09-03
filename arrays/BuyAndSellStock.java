@@ -52,7 +52,5 @@ public class BuyAndSellStock{
         total += peak - valley;
         return total;
     }
-    
-    
 }
 

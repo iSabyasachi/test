@@ -12,7 +12,7 @@ public class MoveZeroes{
 
     public static void moveZeroes(int[] nums) {
         if(nums.length == 1)
-            return nums;
+            return;
         //Find next Zero Number and replace with Non Zero Number
         int nz = 0;
         for(int i = 0 ; i < nums.length ; i++){
