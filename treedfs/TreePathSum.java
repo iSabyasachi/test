@@ -22,50 +22,49 @@ class TreeNode {
 };
 
 class TreePathSum {
-  public static boolean hasPathOpt(TreeNode root, int sum) {
-    if(root == null){
+    public static boolean hasPath(TreeNode root, int sum) {
+        if(root == null) return false;
+
+        if(root.val == sum) return true;
+
+        return hasPath(root.left, sum - root.val) || hasPath(root.right, sum - root.val);
+    }
+    public static boolean hasPathOld(TreeNode root, int sum) {
+        // I will check if the node value is equals to any of the child node, if it is a leaf node, then success
+        //Otherwise, update the sum by substracting the curr value from sum and keep validating the step 1 in the child nodes
+        Map<TreeNode, Integer> table = new HashMap<>();
+
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root); 
+        table.put(root, 10);
+
+        while(!stack.isEmpty()){
+            TreeNode currNode = stack.pop();
+            if(currNode.val == table.get(currNode) && currNode.left == null && currNode.right == null) return true;
+
+            if(currNode.left != null){
+                stack.push(currNode.left);
+                table.put(currNode.left, sum - currNode.val);
+            }
+
+            if(currNode.right != null){
+                stack.push(currNode.right);
+                table.put(currNode.right, sum - currNode.val);
+            }
+        }
+
         return false;
     }
-    if(sum == root.val && root.left == null && root.right == null){
-        return true;
-    }
 
-    return hasPath(root.left , sum - root.val) || hasPath(root.right , sum - root.val);
-
-  }
-
-public static boolean hasPath(TreeNode root, int sum) {
-    if(root == null){
-        return false;
-    }
-    ArrayDeque<TreeNode> stack = new ArrayDeque<>();
-    stack.push(root);
-    while(!stack.isEmpty()){
-        TreeNode curr = stack.pop();
-        sum -= curr.val;
-        if(sum == curr.val && curr.left == null && curr.right == null){
-            return true;
-        }else if(sum != curr.val && curr.left == null && curr.right == null){
-            sum +=curr.val;
-        }else{            
-            if(curr.left != null){
-                stack.push(curr.left);            
-            }
-            if(curr.right != null){
-                stack.push(curr.right);           
-            }
-        }        
-    }
-    return false;
-  }
   public static void main(String[] args) {
-    TreeNode root = new TreeNode(12);
-    root.left = new TreeNode(7);
-    root.right = new TreeNode(1);
-    root.left.left = new TreeNode(9);
-    root.right.left = new TreeNode(10);
-    root.right.right = new TreeNode(5);
-    System.out.println("Tree has path: " + TreePathSum.hasPath(root, 23));
-    System.out.println("Tree has path: " + TreePathSum.hasPath(root, 16));
+    TreeNode root = new TreeNode(1);
+    root.left = new TreeNode(2);
+    root.right = new TreeNode(3);
+    root.left.left = new TreeNode(4);
+    root.left.right = new TreeNode(5);
+    root.right.left = new TreeNode(6);
+    root.right.right = new TreeNode(7);
+    System.out.println("Tree has path: " + TreePathSum.hasPath(root, 10));
+   
   }
 }

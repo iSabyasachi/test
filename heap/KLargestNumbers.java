@@ -10,14 +10,9 @@ Space Complexity : O(K)
   public static List<Integer> findKLargestNumbers(int[] nums, int k) {
     PriorityQueue<Integer> heap = new PriorityQueue<>();
     for(int i = 0; i < nums.length ; i++){
-        if(i < 3){
-            heap.add(nums[i]);
-        }else{
-            if(nums[i] > heap.peek()){
-                heap.poll();
-                heap.add(nums[i]);
-            }
-            
+        heap.add(nums[i]);
+        if(i > k - 1){
+          heap.poll();
         }
     }
     return new ArrayList<Integer>(heap);

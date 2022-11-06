@@ -31,8 +31,8 @@ class ReverseEveryKElements {
     
     while(p < size){
         head = reverseSubList(head, p, q);
-        p += 3;
-        q += 3;
+        p += k;
+        q += k;
     }
     return head;
   }

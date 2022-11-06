@@ -39,13 +39,9 @@ class KClosestPointsToOrigin {
     ArrayList<Point> result = new ArrayList<>();
     PriorityQueue<Point> maxHeap = new PriorityQueue<>((h1, h2) -> h2.distFromOrigin() - h1.distFromOrigin());
     for(int i=0 ; i < points.length ; i++){
-        if(i < k){
-            maxHeap.add(points[i]);
-        }else{
-            if(maxHeap.peek().distFromOrigin() > points[i].distFromOrigin()){
-                maxHeap.poll();
-                maxHeap.add(points[i]);
-            }
+        maxHeap.add(points[i]);
+        if(i > k - 1){
+          maxHeap.poll();
         }
     }    
     return new ArrayList<>(maxHeap);
