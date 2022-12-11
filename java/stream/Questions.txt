@@ -1,0 +1,12 @@
+Q1 Given a list of integers, find out all the even numbers exist in the list using Stream functions?
+
+Q2 Given a list of integers, find out all the numbers starting with 1 using Stream functions?
+Q3 How to find duplicate elements in a given integers list in java using Stream functions?
+Q4 Given the list of integers, find the first element of the list using Stream functions?
+Q5 Given a list of integers, find the total number of elements present in the list using Stream functions?
+Q6 Given a list of integers, find the maximum value element present in it using Stream functions?
+Q7 Given a String, find the first non-repeated character in it using Stream functions?
+Q8 Given a String, find the first repeated character in it using Stream functions?
+Q9 Given a list of integers, sort all the values present in it using Stream functions?
+Q10 Given a list of integers, sort all the values present in it in descending order using Stream functions?
+        
